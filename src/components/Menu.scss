@@ -1,28 +1,34 @@
+@import '../variables';
+
 .hamburger-icon-btn {
   width: 3rem;
   border: none; 
   cursor: pointer;
   background-color: white;
   margin: 2rem 3rem;
+  position: absolute;
+  background-color: transparent;
 }
 .menu-container {
-  font-family: 'Mulish', sans-serif;
-  background-color: #ffa000;
+  font-family: 'Fira Sans', sans-serif;
+  background-color: $bg-orange;
   position: absolute;
   top: 0;
-  left: -33.3333%;
   height: 100vh;
   margin: 0;
-  width: 33.3333%;
-  border-right: 1px solid #e0e0e0;
+  border-right: 1px solid $border-grey;
   font-size: 1.5rem;
   display: flex;
   flex-direction: column;
-  box-shadow: 2px 0px 10px #bdbdbd;
   transition: all 300ms linear;
+  left: -90%;
+  width: 90%;
   &.visible {
     left: 0;
-    box-shadow: 2px 0px 10px #bdbdbd;
+    box-shadow: 2px 0px 10px $shadow-grey;
+    .close-menu-btn {
+      rotate: (-45deg);
+    }
   }
   a {
     color: #fafafa;
@@ -30,7 +36,7 @@
   }
   li {
     text-align: center;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid $border-grey;
     padding: 1rem 0;
     list-style: none;
     &:first-child {
@@ -43,5 +49,14 @@
     border: none;
     margin: 2rem 2rem 0 0 ;
     align-self: flex-end;
+    transform: rotate(45deg);
+    transition: all 300ms linear;
+  }
+}
+
+@media (min-width: $screen-m) {
+  .menu-container {
+    left: -33.3333%;
+    width: 33.3333%;
   }
 }

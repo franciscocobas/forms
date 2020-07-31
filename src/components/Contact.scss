@@ -1,0 +1,40 @@
+@import '../variables';
+
+.contact-container {
+  form {
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+    input {
+      width: 90%;
+      font-size: 1.5rem;
+      height: 2.5rem;
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid $border-grey;
+    }
+    button {
+      height: 2.5rem;
+      border: 1px solid $border-grey;
+      width: 75%;
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      border-radius: 5px;
+    }
+  }
+}
+
+@media (min-width: $screen-m) {
+  .contact-container {
+    form {
+      width: 50%;
+      input {
+        width: 50%;
+      }
+      button {
+        width: 30%;
+      }
+    }
+  }
+}

@@ -1,7 +1,11 @@
 import React from 'react';
 
+import './Home.scss';
+
 export default () => {
   return (
-    <div>Home</div>
+    <div className="home-container">
+
+    </div>
   )
 }
