@@ -1,0 +1,47 @@
+.hamburger-icon-btn {
+  width: 3rem;
+  border: none; 
+  cursor: pointer;
+  background-color: white;
+  margin: 2rem 3rem;
+}
+.menu-container {
+  font-family: 'Mulish', sans-serif;
+  background-color: #ffa000;
+  position: absolute;
+  top: 0;
+  left: -33.3333%;
+  height: 100vh;
+  margin: 0;
+  width: 33.3333%;
+  border-right: 1px solid #e0e0e0;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0px 10px #bdbdbd;
+  transition: all 300ms linear;
+  &.visible {
+    left: 0;
+    box-shadow: 2px 0px 10px #bdbdbd;
+  }
+  a {
+    color: #fafafa;
+    text-decoration: none;
+  }
+  li {
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 1rem 0;
+    list-style: none;
+    &:first-child {
+      margin-top: 2rem;
+    }
+  }
+  .close-menu-btn {
+    width: 2rem;
+    background-color: inherit;
+    border: none;
+    margin: 2rem 2rem 0 0 ;
+    align-self: flex-end;
+  }
+}
