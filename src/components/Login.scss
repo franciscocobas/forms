@@ -1,6 +1,6 @@
-@import '../variables';
+@import "../variables";
 
-.contact-container {
+.login-container {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -31,7 +31,7 @@
 }
 
 @media (min-width: $screen-m) {
-  .contact-container {
+  .login-container {
     form {
       width: 50%;
       input {

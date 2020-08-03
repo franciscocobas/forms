@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 import { ReactComponent as OpenMenuIcon } from '../images/open-menu.svg'
 import { ReactComponent as CloseMenuIcon } from '../images/close.svg'
@@ -10,10 +10,12 @@ export default () => {
   const [menuVisible, setMenuVisible] = useState(false);
 
   return (
-    <nav>
-      <button name="menu" className="hamburger-icon-btn" onClick={() => setMenuVisible(true)}>
-        <OpenMenuIcon />
-      </button>
+    <nav className="nav-menu">
+      <div className="open-menu-btn-container">
+        <button name="menu" className="hamburger-icon-btn" onClick={() => setMenuVisible(true)}>
+          <OpenMenuIcon />
+        </button>
+      </div>
       <div className={`menu-container ${menuVisible && 'visible'}`}>
         <button className="close-menu-btn" onClick={() => setMenuVisible(false)}>
           <CloseMenuIcon />
@@ -27,6 +29,7 @@ export default () => {
           </li>
         </ul>
       </div>
+      <Link className="login-btn" to="/login">Log In</Link>
     </nav>
   )
 }
