@@ -1,6 +1,8 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
+import ErrorMessage from './ErrorMessage';
+
 import './Login.scss';
 
 export default () => {
@@ -21,6 +23,7 @@ export default () => {
             placeholder="Email"
           />
         </div>
+        {errors.email && <ErrorMessage>Email field is required</ErrorMessage>}
         <div>
           <input
             name="password"
@@ -29,6 +32,7 @@ export default () => {
             placeholder="Password"
           />
         </div>
+        {errors.password && <ErrorMessage>Password field is required</ErrorMessage>}
         <button type="submit">Log In</button>
       </form>
     </div>
