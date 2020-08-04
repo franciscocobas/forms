@@ -2,14 +2,17 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 
 import ErrorMessage from './ErrorMessage';
+import actions from '../actions';
 
 import './Login.scss';
+import { useDispatch } from 'react-redux';
 
 export default () => {
   const { register, handleSubmit, watch, errors } = useForm();
+  const dispatch = useDispatch();
 
   const onSubmit = data => {
-
+    dispatch(actions.login({ email: data.email, password: data.password }));
   }
 
   return (

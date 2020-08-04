@@ -1,18 +1,20 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router';
 import { Provider } from 'react-redux';
-
-import store from './store';
+import configureStore, { history } from './store';
 
 import Home from './components/Home';
 import Contact from './components/Contact';
 import Menu from './components/Menu';
 import Login from './components/Login';
 
+const store = configureStore();
+
 function App() {
   return (
     <Provider store={store}>
-      <Router>
+      <ConnectedRouter history={history}>
         <Menu />
         <Switch>
           <Route path="/contact-us">
@@ -25,7 +27,7 @@ function App() {
             <Home />
           </Route>
         </Switch>
-      </Router>
+      </ConnectedRouter>
     </Provider>
   );
 }
