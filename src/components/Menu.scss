@@ -2,6 +2,7 @@
 
 .nav-menu {
   display: flex;
+  align-items: center;
   position: absolute;
   top: 0;
   left: 0;
@@ -19,7 +20,7 @@
   }
   .menu-container {
     font-family: 'Fira Sans', sans-serif;
-    background-color: $bg-orange;
+    background-color: $main-blue;
     position: absolute;
     top: 0;
     height: 100vh;
@@ -64,13 +65,13 @@
   }
 
   .login-btn {
-    background-color: $bg-orange;
+    background-color: $main-blue;
     border: 1px solid $border-grey;
     font-size: 1.5rem;
     margin: 2rem;
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    color: inherit;
+    color: white;
     text-decoration: none;
   }
 

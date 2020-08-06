@@ -19,7 +19,6 @@ const Overlay = styled.div`
 export default () => {
   const [menuVisible, setMenuVisible] = useState(false);
   const location = useLocation();
-  console.log(location);
 
   return (
     <nav className="nav-menu">
@@ -35,6 +34,9 @@ export default () => {
         <ul>
           <li>
             <NavLink activeClassName="active" to='/' onClick={() => setMenuVisible(false)}>Home</NavLink>
+          </li>
+          <li>
+            <NavLink activeClassName="active" to='/workflows' onClick={() => setMenuVisible(false)}>Workflows</NavLink>
           </li>
           <li>
             <NavLink activeClassName="active" to='/contact-us' onClick={() => setMenuVisible(false)}>Contact Us</NavLink>
