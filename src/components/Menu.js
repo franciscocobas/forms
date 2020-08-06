@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { ReactComponent as OpenMenuIcon } from '../images/open-menu.svg'
@@ -18,6 +18,8 @@ const Overlay = styled.div`
 
 export default () => {
   const [menuVisible, setMenuVisible] = useState(false);
+  const location = useLocation();
+  console.log(location);
 
   return (
     <nav className="nav-menu">
@@ -39,7 +41,9 @@ export default () => {
           </li>
         </ul>
       </div>
-      <Link className="login-btn" to="/login">Log In</Link>
+      {
+        location.pathname !== '/login' && <Link className="login-btn" to="/login">Log In</Link>
+      }
       {menuVisible && <Overlay onClick={() => setMenuVisible(false)} />}
     </nav>
   )
