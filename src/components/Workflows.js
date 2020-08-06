@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import ActionBox from './ActionBox';
+
 const WorkflowContainer = styled.div`
   width: 90%;
   margin: 0 auto;
@@ -10,40 +12,23 @@ const WorkflowContainer = styled.div`
   }
 `;
 
-const Box = styled.div`
-  border: 1px solid #bdbdbd;
-  width: 60%;
-  margin: 0 auto;
-  border-radius: 5px;
-`;
-
-const BoxHeader = styled.div`
-  border-bottom: 1px solid #bdbdbd;
-  background-color: #5ebe00;
-  color: white;
-  padding-left: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-`;
-
-const BoxBody = styled.div`
-  background-color: white;
-  font-size: 14px;
-  padding: 15px;
-  border-radius: 5px;
-`;
+const ConnectLine = styled.div`
+  border-right: 1px solid #333;
+  height: 20px;
+`
 
 export default () => {
   return (
     <WorkflowContainer>
-      <Box>
-        <BoxHeader>TRIGGER START</BoxHeader>
-        <BoxBody>
-          <p><span className="semi-bold">Submission:</span> Form Title</p>
-          <p><span className="semi-bold">Devices/Groups:</span> All</p>
-        </BoxBody>
-      </Box>
+      <ActionBox
+        headerType="trigger-start"
+        headerText="TRIGGER START"
+      />
+      <ConnectLine />
+      <ActionBox
+        headerType="destination"
+        headerText="DESTINATION: Device Magic Database"
+      />
     </WorkflowContainer>
   )
 };
