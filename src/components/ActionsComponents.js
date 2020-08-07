@@ -16,10 +16,14 @@ const BoxHeader = styled.div`
   display: flex;
   align-items: center;
   ${props => {
-    switch(props.color) {
+    switch (props.color) {
       case 'destination':
         return css`
           background-color: #333;
+        `
+      case 'finish':
+        return css`
+          background-color: #0061ff;
         `
       default:
         return css`
@@ -36,12 +40,11 @@ const BoxBody = styled.div`
   border-radius: 5px;
 `;
 
-export default ({ headerType, headerText }) => (
+export const ActionBox = ({ headerType, headerText, children }) => (
   <Box>
     <BoxHeader color={headerType}>{headerText}</BoxHeader>
     <BoxBody>
-      <p><span className="semi-bold">Submission:</span> Form Title</p>
-      <p><span className="semi-bold">Devices/Groups:</span> All</p>
+      {children}
     </BoxBody>
   </Box>
-)
+);
