@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { ReactComponent as CloseIcon } from '../images/close.svg'
 
 const Box = styled.div`
   border: 1px solid #bdbdbd;
@@ -31,6 +32,19 @@ const BoxHeader = styled.div`
         `
     }
   }}
+  p {
+    flex: 1;
+  }
+  #close-icon {
+    background-color: transparent;
+    border: none;
+    svg {
+      fill: white;
+      width: 15px;
+      height: 15px;
+    }
+    margin-right: 15px;
+  }
 `;
 
 const BoxBody = styled.div`
@@ -42,7 +56,12 @@ const BoxBody = styled.div`
 
 export const ActionBox = ({ headerType, headerText, children }) => (
   <Box>
-    <BoxHeader color={headerType}>{headerText}</BoxHeader>
+    <BoxHeader color={headerType}>
+      <p>{headerText}</p>
+      <button id="close-icon">
+        <CloseIcon />
+      </button>
+    </BoxHeader>
     <BoxBody>
       {children}
     </BoxBody>
